@@ -14,16 +14,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = false, onlyExplicitlyIncluded = true)
-public class ClientDTO extends AbstractAuditingEntity {
-    private Long id;
-
-    private String nom;
-
-    private String prenom;
-
+public class ProfessionSalaireDTO extends AbstractAuditingEntity {
     private String profession;
-
-    private Integer age;
-
-    private BigDecimal salaire;
+    private BigDecimal salaireMoyen;
 }

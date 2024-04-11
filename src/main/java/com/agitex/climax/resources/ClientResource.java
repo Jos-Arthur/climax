@@ -1,6 +1,7 @@
 package com.agitex.climax.resources;
 
 import com.agitex.climax.dtos.ClientDTO;
+import com.agitex.climax.dtos.ProfessionSalaireDTO;
 import com.agitex.climax.services.ClientService;
 import com.agitex.climax.utils.HeaderUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -129,6 +130,17 @@ public class ClientResource {
                 .noContent()
                 .headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString()))
                 .build();
+    }
+
+    /**
+     * Average salary by profession.
+     *
+     * @return the list.
+     */
+    @GetMapping("/clients/average-salary-by-profession")
+    public List<ProfessionSalaireDTO> averageSalaryByProfession() {
+        log.debug("REST request to get average salary by profession");
+        return clientService.averageSalaireByProfession();
     }
 
 }

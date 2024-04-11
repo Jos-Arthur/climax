@@ -1,6 +1,7 @@
 package com.agitex.climax.services;
 
 import com.agitex.climax.dtos.ClientDTO;
+import com.agitex.climax.dtos.ProfessionSalaireDTO;
 import com.agitex.climax.entities.Client;
 import com.agitex.climax.mapper.ClientMapper;
 import com.agitex.climax.repositories.ClientRepository;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -74,5 +76,22 @@ public class ClientService {
                         "Aucun Client avec cet identifiant existe dans la base de données"));
         client.setDeleted(true);
         clientRepository.save(client);
+    }
+
+    /**
+     * Get Average of salary by profession.
+     *
+     * @return ProfessionDTO.
+     */
+    public List<ProfessionSalaireDTO> averageSalaireByProfession() {
+        log.debug("Request to get all average of salary by profession");
+        return clientRepository.findAverageSalaryByProfession().stream()
+                .map(object -> {
+                    String profession = object[0].toString();
+                    BigDecimal salaireMoyen =
+                            (object[1] != null) ? new BigDecimal(object[1].toString()) : BigDecimal.ZERO;
+                    return new ProfessionSalaireDTO(profession, salaireMoyen);
+                })
+                .collect(Collectors.toList());
     }
 }

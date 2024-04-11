@@ -31,7 +31,7 @@ public class Client extends AbstractAuditingEntity {
     private String nom;
 
     @Column(name = "age")
-    private int age;
+    private Integer age;
 
     @Column(name = "prenom")
     private String prenom;
@@ -39,6 +39,6 @@ public class Client extends AbstractAuditingEntity {
     @Column(name = "profession")
     private String profession;
 
-    @Column(name = "revenu")
-    private BigDecimal revenu;
+    @Column(name = "salaire")
+    private BigDecimal salaire;
 }
