@@ -1,0 +1,6 @@
+# ================================================================
+# PROFILE ACTIVATION : prod for production and dev for development
+# ================================================================
+spring:
+  profiles:
+    active: dev

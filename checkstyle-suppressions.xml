@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE suppressions PUBLIC
+        "-//Puppy Crawl//DTD Suppressions 1.2//EN"
+        "http://www.puppycrawl.com/dtds/suppressions_1_2.dtd">
+
+<suppressions>
+    <!--
+      Suppress all checks on generated source files.
+    -->
+    <suppress checks="MethodLength" files="config.*"/>
+    <suppress checks=".*" files="generated-sources/*"/>
+    <suppress checks="FileLength" files="."/>
+    <suppress checks="JavadocPackage" files="."/>
+    <suppress checks="JavadocVariable" files="."/>
+    <suppress checks="MagicNumber" files="security.*"/>
+    <suppress checks="MagicNumber" files="entity.*"/>
+    <suppress checks="MagicNumber" files="dto.*"/>
+    <suppress checks="MagicNumber" files="repository.ReportingRepository*"/>
+    <suppress checks="HideUtilityClassConstructor" files="."/>
+</suppressions>

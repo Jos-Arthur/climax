@@ -1,0 +1,28 @@
+server:
+  port: '8081'
+# =====================================
+# JPA, HIBERNATE AND NAME CONFIGURATION
+# =====================================
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+  application:
+    name: climax
+
+# ===============================
+# DATABASE CONFIGURATION
+# ==============================
+  datasource:
+    username: climax_user
+    url: jdbc:postgresql://localhost:5432/climax_db
+    password: climax
+  sql:
+    init:
+      platform: postgres
+
+
