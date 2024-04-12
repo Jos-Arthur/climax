@@ -20,7 +20,7 @@ mvn spring-boot:run
 ```
 ## Outils de documentation et de test des endpoints
 
-* Swagger: [http://localhost:8081/swagger-ui.html](http://localhost:8081/swagger-ui.html)
+* OpenAPI: [http://localhost:8081/swagger-ui/index.html](http://localhost:8081/swagger-ui/index.html)
 
 
 ### Auteur
