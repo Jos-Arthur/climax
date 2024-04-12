@@ -2,7 +2,7 @@
 
 Climax est un projet permettant d’effectuer des rapports statistiques sur les clients de la société Climax.
 
-## Utilisation en local
+## Démarrage du projet
 
 ### Prérequis
 
