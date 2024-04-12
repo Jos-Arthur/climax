@@ -206,7 +206,7 @@ public class ClientResource {
      * @param file
      * @return clients.
      */
-    @PostMapping(value = "/clients/save-clients", consumes = {"multipart/form-data"})
+    @PostMapping(value = "/clients/upload-save-clients", consumes = {"multipart/form-data"})
     @Operation(summary = "Endpoint permettant de charger un fichier contenant les données d'un client.",
             tags = {"Clients"}, responses = {
             @ApiResponse(responseCode = "200", description = "Success|OK"),
