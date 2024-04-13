@@ -34,3 +34,4 @@ docker-compose up -d
 👤 **José Arthur OUEDRAOGO**
 
 * Github: [@Jos-Arthur](https://github.com/Jos-Arthur/climax)
+* Email : josearthur.oued@outlook.com
