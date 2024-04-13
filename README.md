@@ -18,6 +18,12 @@ mvn clean install
 ```sh
 mvn spring-boot:run
 ```
+
+### Docker installation et exécution
+```sh
+docker-compose up -d
+```
+
 ## Outils de documentation et de test des endpoints
 
 * OpenAPI: [http://localhost:8081/swagger-ui/index.html](http://localhost:8081/swagger-ui/index.html)
