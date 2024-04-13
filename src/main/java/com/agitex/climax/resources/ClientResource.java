@@ -40,8 +40,8 @@ public class ClientResource {
     /**
      * Instantiates a new Client resource.
      *
-     * @param clientService    the client service
-     * @param  fichierService the file service
+     * @param clientService  the client service
+     * @param fichierService the file service
      */
     public ClientResource(final ClientService clientService,
                           final FichierService fichierService) {

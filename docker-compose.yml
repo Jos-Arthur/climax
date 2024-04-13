@@ -1,30 +1,31 @@
-version: '3.8'  # Mettez à jour la version selon vos besoins
-
+version: '3.1'
 services:
   climax-database:
     image: 'postgres:12'
-    container_name: climax_database
+    container_name: climax_postgres
     ports:
-      - '9080:5432'  # Mapping du port par défaut de PostgreSQL
+      - '9099:5432'
     environment:
       POSTGRES_DB: climax_db
-      POSTGRES_USER: climax_user  # Utilisateur par défaut de PostgreSQL
+      POSTGRES_USER: climax_user
       POSTGRES_PASSWORD: climax
+
     networks:
       - climax-network
 
+
   climax-back:
     container_name: climax-back
-    build: ./  # Chemin vers le Dockerfile pour la construction de l'image
+    build: ./
     ports:
       - '8081:8081'
     depends_on:
       - climax-database
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://climax-database:5432/climax_db  # Correction du nom du service de la base de données
-      SPRING_DATASOURCE_USERNAME: climax_user
-      SPRING_DATASOURCE_PASSWORD: climax
-      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://climax_postgres:5432/climax_db
+      - SPRING_DATASOURCE_USERNAME=climax_user
+      - SPRING_DATASOURCE_PASSWORD=climax
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
     networks:
       - climax-network
 

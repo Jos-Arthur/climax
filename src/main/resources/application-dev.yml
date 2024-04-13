@@ -18,20 +18,20 @@ spring:
 # DATABASE CONFIGURATION
 # ==============================
 
-## Local configuration
+  ### Local configuration
 
-  datasource:
-    username: climax_user
-    url: jdbc:postgresql://localhost:5432/climax_db
-    password: climax
+  #  datasource:
+  #    username: climax_user
+  #    url: jdbc:postgresql://localhost:5432/climax_db
+  #    password: climax
 
 ### Docker configuration
-#  datasource:
-#    username: climax_user
-#    url: jdbc:postgresql://climax_database:9080/climax_db
-#    password: climax
-#  sql:
-#    init:
-#      platform: postgres
+  datasource:
+    username: climax_user
+    url: jdbc:postgresql://climax_postgres:9099/climax_db
+    password: climax
+  sql:
+    init:
+      platform: postgres
 
 
